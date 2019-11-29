@@ -17,7 +17,7 @@ export class TodoService {
 
     if (token != null || tokenJSON.expires_in < new Date().getTime()) {
 
-      const getTaskUrl = 'http://localhost:8080/getTasks';
+      const getTaskUrl = 'http://localhost:7000/getTasks';
 
       const getTaskHeaders: HttpHeaders = new HttpHeaders()
         .append('Authorization', 'Bearer' + tokenJSON.access_token);
@@ -44,7 +44,7 @@ export class TodoService {
   addItem(task: string, token: string) {
     this.todoList.unshift(task);
 
-    const insertTaskUrl = 'http://localhost:8080/insertTask';
+    const insertTaskUrl = 'http://localhost:7000/insertTask';
 
     const insertTaskParams: HttpParams = new HttpParams()
       .append('task', task);

@@ -11,7 +11,7 @@ export class TokenService {
   constructor(private _http: HttpClient) {}
 
   getToken(userData: UserData) {
-    const getTokenUrl = 'http://localhost:8080/oauth/token';
+    const getTokenUrl = 'http://localhost:7000/oauth/token';
 
     const getTokenParams: HttpParams = new HttpParams()
      .append('grant_type', 'password')
